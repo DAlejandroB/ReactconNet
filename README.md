@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-“Social Media App” is a personal project designed to highlight technical skills and serve as a learning platform in several key areas of web development. This includes database management, backend and frontend development, deployment, testing, UI design, and the application of security best practices. The project aims to be a foundational piece of a developer portfolio.
+“ReactconNet” is a personal project designed to highlight technical skills and serve as a learning platform in several key areas of web development. This includes database management, backend and frontend development, deployment, testing, UI design, and the application of security best practices. The project aims to be a foundational piece of a developer portfolio.
 
 ## Tech Stack
 
