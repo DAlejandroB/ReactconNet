@@ -1,10 +1,9 @@
-﻿namespace ReactConNetApi.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace ReactConNetApi.Models
 {
-    public class User
+    public class User : IdentityUser
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public DateTime CreationTimestamp { get; set; }
+        public DateTime CreationTimestamp { get; set; } = DateTime.Now;
     }
 }

@@ -40,9 +40,9 @@ namespace ReactConNetApi.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> PutUser(string id, User user)
         {
-            if (id != user.ID)
+            if (id != user.Id)
             {
                 return BadRequest();
             }
@@ -76,7 +76,7 @@ namespace ReactConNetApi.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.ID }, user);
+            return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
         // DELETE: api/Users/5
@@ -95,9 +95,9 @@ namespace ReactConNetApi.Controllers
             return NoContent();
         }
 
-        private bool UserExists(int id)
+        private bool UserExists(string id)
         {
-            return _context.Users.Any(e => e.ID == id);
+            return _context.Users.Any(e => e.Id == id);
         }
     }
 }

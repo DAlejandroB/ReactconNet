@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ReactConNetApi.Models;
 
 namespace ReactConNetApi.Data
 {
-    public class SocialMediaContext : DbContext
+    public class SocialMediaContext : IdentityDbContext
     {
-        public SocialMediaContext(DbContextOptions<SocialMediaContext> options) : base(options) { }
+        public SocialMediaContext(DbContextOptions options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
 
