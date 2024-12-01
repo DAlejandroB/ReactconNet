@@ -13,14 +13,14 @@ public class TokenService
         _configuration = configuration;
     }
 
-    public string GenerateToken(IdentityUser user)
+    public string GenerateToken(IdentityUser<Guid> user)
     {
         var jwtSettings = _configuration.GetSection("JwtSettings");
 
         string emailValue = user.Email ?? throw new ArgumentNullException(nameof(user.Email));
         var claims = new[]
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, emailValue),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
